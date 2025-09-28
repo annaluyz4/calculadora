@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabuada</title>
+  <style>
+    body {
+      font-family: 'pacifico', cursive;
+      background: #350a06; 
+      text-align: center;
+      margin: 030;
+      padding: 20px;
+      color: #fff;
+    }
+    h1 {
+      color: #800020;
+      margin: 40;
+    }
+    .container {
+      background: #1a1a1a; 
+      color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+      border: 2px solid #800020;
+    }
+    input {
+      padding: 5px;
+      border: 1px solid #800020;
+      border-radius: 5px;
+    }
+    button {
+      margin-top: 10px;
+      padding: 8px 15px;
+      cursor: pointer;
+      background: #800020; 
+      border: none;
+      color: white;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    button:hover {
+      background: #a83244; 
+    }
+    #resultado {
+      margin-top: 15px;
+      text-align: left;
+    }
+   
+  </style>
+</head>
+<body>
+  <h1>Tabuada</h1>
+
+  <div class="container">
+    <form id="form">
+      <label for="numero">Número</label><br>
+      <input type="number" id="numero" required><br>
+      <button type="submit">Gerar Tabuada</button>
+    </form>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    document.getElementById("form").onsubmit = function(e) {
+      e.preventDefault();
+      let n = document.getElementById("numero").value;
+      let res = "";
+
+      for (let i = 1; i <= 10; i++) {
+        res += n + " x " + i + " = " + (n * i) + "<br>";
+      }
+
+      document.getElementById("resultado").innerHTML = res;
+    }
+
+  </script>
+</body>
+<footer>Desenvolvido por Anna Luyza</footer>
+</html>
